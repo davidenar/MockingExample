@@ -10,4 +10,14 @@ public class CalculatorTest {
     public void testAddingTwoNumbers() {
         Assertions.assertEquals(13, calculator.add(7, 6));
     }
+
+    @Test
+    public void testAddingThreeNumbers() {
+        Assertions.assertEquals(13, calculator.add(6, 4, 3));
+    }
+
+    @Test
+    public void testAddingFourNumbers() {
+        Assertions.assertEquals(20, calculator.add(7, 6, 4, 3));
+    }
 }
