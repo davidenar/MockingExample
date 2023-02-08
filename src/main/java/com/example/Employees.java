@@ -21,7 +21,7 @@ public class Employees {
 				employee.setPaid(true);
 				payments++;
 			} catch (RuntimeException e) {
-				employee.setPaid(false);
+					employee.setPaid(false);
 			}
 		}
 		return payments;
