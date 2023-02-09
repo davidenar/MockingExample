@@ -1,23 +1,28 @@
 package com.example;
 
+import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
+import java.util.ArrayList;
 
 public class CalculatorTest {
     private Calculator calculator = new Calculator();
 
+
     @Test
-    public void testAddingTwoNumbers() {
-        Assertions.assertEquals(13, calculator.add(7, 6));
+    public void testAddingAllElementsInList() {
+        Assertions.assertEquals(20, calculator.add(Lists.list(5,5,5,5)));
     }
 
     @Test
-    public void testAddingThreeNumbers() {
-        Assertions.assertEquals(13, calculator.add(6, 4, 3));
+    public void testAddingElementsInEmptyListShouldReturnZero() {
+        Assertions.assertEquals(0, calculator.add(new ArrayList<Integer>()));
     }
 
     @Test
-    public void testAddingFourNumbers() {
-        Assertions.assertEquals(20, calculator.add(7, 6, 4, 3));
+    public void testAddingElementsFromNullShouldThrowException() {
+        Assertions.assertThrows(RuntimeException.class, () -> calculator.add(null));
     }
 }

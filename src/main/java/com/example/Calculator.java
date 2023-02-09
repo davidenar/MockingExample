@@ -1,9 +1,11 @@
 package com.example;
 
+import java.util.List;
+
 public class Calculator {
-    public int add (int num1, int num2, int... others){
-        int sum = num1+num2;
-        for (int i : others){
+    public int add (List<Integer> l){
+        int sum = 0;
+        for (int i : l){
             sum = sum+i;
         }
         return sum;
