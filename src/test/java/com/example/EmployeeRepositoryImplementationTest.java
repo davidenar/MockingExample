@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class EmployeeRepositoryImplementationTest {
 
@@ -22,9 +23,18 @@ public class EmployeeRepositoryImplementationTest {
         employeeRepositoryImplementation.save(jane);
         Employee john = new Employee("1", 20000);
         employeeRepositoryImplementation.save(john);
-        System.out.println(employees.get(0));
         Assertions.assertEquals(john, employeeRepositoryImplementation.employeeList.get(0));
     }
 
+    @Test
+    public void findAllShouldReturnEmployeeList(){
+        Employee jane = new Employee("1", 10000);
+        employeeRepositoryImplementation.employeeList.add(jane);
+        Employee john = new Employee("2", 20000);
+        employeeRepositoryImplementation.employeeList.add(john);
+        Assertions.assertEquals((Arrays.asList(jane, john)), employeeRepositoryImplementation.findAll());
+
+
+    }
 
 }
